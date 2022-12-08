@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Delete Results {% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h4>Bạn có chắc chắn muốn xóa dữ liệu điểm {{marks.score}} của người dùng {{marks.user}} trong {{marks.quiz}} ?</h4>
+    <br>
+    <form action="/delete_result/{{marks.id}}/" method="POST">
+            
+        {% csrf_token %}
+        <a class="btn btn-warning" href="/results/">Thoát</a>
+    
+        <input class="btn btn-danger" type="submit" value="Xóa">
+    </form>
+</div>
+
+{% endblock %}

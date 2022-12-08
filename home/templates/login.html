@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} Login Page {% endblock %}
+{% block css %}
+<style>
+      .head1 {
+    color: #FBAD30;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 50px;
+  }
+
+  </style>
+  {% endblock %}
+
+  {% block body %}
+  <div class="row py-5 p-4 bg-white rounded shadow-sm">
+
+    <div class="col-lg-6" style="position:relative; left: 380px;">
+        <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold"
+            style="color:black;font-weight:bold; text-align: center;">Điền thông tin đăng nhập của bạn vào ô bên dưới</div>
+        <br>
+        <form class="row g-4" method="POST" action="/login/">{% csrf_token %}
+            <div class="col-md-12">
+                <label for="inputname" class="form-label" style="font-weight: bold;"><i>
+                        Tên tài khoản</i></label>
+                <input type="text" placeholder="Nhập tên tài khoản của bạn ở đây!" style="text-align: center;"
+                    class="form-control" id="username" name="username" required>
+            </div>
+
+            <div class="col-md-12">
+                <label for="inputname" class="form-label" style="font-weight: bold;"><i>
+                        Mật khẩu</i></label>
+                <input type="password" placeholder="Nhập mật khẩu của bạn ở đây!" style="text-align: center;"
+                    class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Hoàn thành</button>
+      
+  {% endblock %}

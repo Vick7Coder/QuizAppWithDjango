@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %} Sign Up {% endblock %}
+{% block css %}
+<style>
+      .head1 {
+    color: #FBAD30;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 50px;
+  }
+
+  </style>
+  {% endblock %}
+
+  {% block body %}
+  <div class="row py-5 p-4 bg-white rounded shadow-sm">
+
+    <div class="col-lg-6" style="position:relative; left: 380px;">
+        <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold"
+            style="color:black;font-weight:bold; text-align: center;">ĐIỀN THÔNG TIN ĐĂNG KÍ CỦA BẠN VÀO Ô BÊN DƯỚI</div>
+        <br>
+        <form class="row g-4" method="POST" action="/signup/">{% csrf_token %}
+            <div class="col-md-12">
+                <label for="inputname" class="form-label" style="font-weight: bold;"><i>
+                        Họ và tên đệm</i></label>
+                <input type="text" placeholder="Nhập vào họ và tên đệm của bạn!" style="text-align: center;"
+                    class="form-control" id="first_name" name="first_name" required>
+            </div>
+            <div class="col-md-12">
+                <label for="inputname" class="form-label" style="font-weight: bold;"><i>
+                        Tên</i></label>
+                <input type="text" placeholder="Nhập vào tên của bạn!" style="text-align: center;"
+                    class="form-control" id="last_name" name="last_name" required>
+            </div>
+            <div class="col-md-12">
+                <label for="inputname" class="form-label" style="font-weight: bold;"><i>
+                        Tên tài khoản</i></label>
+                <input type="text" placeholder="Nhập vào tên tài khoản bạn muốn đăng kí!" style="text-align: center;"
+                    class="form-control" id="username" name="username" required>
+            </div>
+            <div class="col-md-12">
+                <label for="inputname" class="form-label" style="font-weight: bold;"><i>
+                        Email</i></label>
+                <input type="email" placeholder="Nhập vào email bạn đăng kí!" style="text-align: center;"
+                    class="form-control" id="email" name="email" required>
+            </div>
+            <div class="col-md-12">
+                <label for="inputname" class="form-label" style="font-weight: bold;"><i>
+                        Mật khẩu</i></label>
+                <input type="password" placeholder="Nhập vào mật khẩu bạn muốn đăng kí!" style="text-align: center;"
+                    class="form-control" id="password1" name="password1" required>
+            </div>
+            <div class="col-md-12">
+                <label for="inputname" class="form-label" style="font-weight: bold;"><i>
+                        Xác nhận lại mật khẩu</i></label>
+                <input type="password" placeholder="Nhập lại mật khẩu của bạn!" style="text-align: center;"
+                    class="form-control" id="password2" name="password2" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Hoàn thành</button>
+            </form>
+            <br>
+        </div>
+  </div>
+
+  {% endblock %}
